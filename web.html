@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Web_1</title>
+
+    <style>
+        body {
+            background: url(img/fl.jpg);
+            width: 100%;
+            height: 100%;
+            color: #FFFAF0;
+        }
+
+        p {
+            color: #3f1f0b;
+        }
+
+        .btn {
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            padding: 10px 40px;
+            margin: 0 20px;
+            font-family: 'Montserrat Alternates', sans-serif;
+            font-weight: 600;
+            line-height: 30px;
+            color: white;
+            font-size: 15px;
+            text-transform: uppercase;
+            background: #f5b08f;
+            border-width: 0;
+            box-shadow: 5px 5px 0 #532831;
+            outline: none;
+            cursor: pointer;
+            transition: 1.5s;
+        }
+
+        .btn:before, .btn:after {
+            content: "";
+            position: absolute;
+            height: 200px;
+            left: -50%;
+            margin-top: -100px;
+            top: 50%;
+            width: 200px;
+            border-radius: 50%;
+            opacity: 0.3;
+            z-index: -1;
+            transform: scale(0);
+        }
+
+        .btn:before {
+            background: #ffeede;
+            transition: .8s ease-out;
+        }
+
+        .btn:after {
+            transition: .4s ease-in .3s;
+        }
+
+        .btn:hover {
+            color: #532831;
+        }
+
+        .btn:hover:before, .btn:hover:after {
+            opacity: 1;
+            transform: scale(4);
+        }
+    </style>
+
+    <table border="1" width="100%" cellpadding="0" cellspacing="0" bgcolor="#FFFAF0">
+        <th><font size="6pt" face="Times New Roman, Helvetica, serif" color="#6a310a">Лабораторная работа№1
+            Web-программированию</font></th>
+        <tr>
+            <th><font color="#93673d" size="3pt">Выполнила: Шаповалова Дарья<br>Группа: P3130</font></th>
+        </tr>
+    </table>
+
+</head>
+<table align="center">
+    <tr>
+        <th>
+            <form action="handler.php">
+                <p><b>Выберите X:</b></p>
+                <p><input name="x1" type="radio" value="-2">-2</p>
+                <p><input name="x2" type="radio" value="-1,5">-1,5</p>
+                <p><input name="x3" type="radio" value="-1">-1</p>
+                <p><input name="x4" type="radio" value="-0,5">-0,5</p>
+                <p><input name="x5" type="radio" value="0">0</p>
+                <p><input name="x6" type="radio" value="0,5">0,5</p>
+                <p><input name="x7" type="radio" value="1">1</p>
+                <p><input name="x8" type="radio" value="1,5">1,5</p>
+                <p>
+                    <button class="btn">Отправить</button>
+                </p>
+            </form>
+        </th>
+        <th><p>
+            <form action="handler.php">
+            <p><b>Введите Y (от -5 до 3!):</b></p>
+                <p><input type="text" class="number" data-min="-5" data-max="3" data-separator=","></p>
+            <p>
+                <button class="btn">Отправить</button>
+            </p>
+            </form>
+            </p></th>
+    </tr>
+
+</table>
+<body>
+
+
+</body>
+</html>
