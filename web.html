@@ -82,7 +82,7 @@
     <tr>
         <th>
             <form action="handler.php">
-                <p><b>Выберите X:</b></p>
+                <p><b>Введите X:</b></p>
                 <p><input name="x1" type="radio" value="-2">-2</p>
                 <p><input name="x2" type="radio" value="-1,5">-1,5</p>
                 <p><input name="x3" type="radio" value="-1">-1</p>
@@ -96,6 +96,7 @@
                 </p>
             </form>
         </th>
+
         <th><p>
             <form action="handler.php">
             <p><b>Введите Y (от -5 до 3!):</b></p>
@@ -105,6 +106,20 @@
             </p>
             </form>
             </p></th>
+
+        <th>
+        <form action="handler.php">
+            <p><b>Введите R:</b></p>
+            <p><select size="2" multiple name="R" >
+                <option value="1">1</option>
+                <option selected value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select></p>
+        </form>
+        </th>
+
     </tr>
 
 </table>
