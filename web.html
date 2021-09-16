@@ -67,20 +67,39 @@
             opacity: 1;
             transform: scale(4);
         }
+
+        select {
+            width: 150px;
+        }
+
+
+
+        /*.header {*/
+        /*    display: flex;*/
+        /*    height: 250px;*/
+        /*}*/
     </style>
-
-    <table border="1" width="100%" cellpadding="0" cellspacing="0" bgcolor="#FFFAF0">
-        <th><font size="6pt" face="Times New Roman, Helvetica, serif" color="#6a310a">Лабораторная работа№1
-            Web-программированию</font></th>
-        <tr>
-            <th><font color="#93673d" size="3pt">Выполнила: Шаповалова Дарья<br>Группа: P3130</font></th>
-        </tr>
-    </table>
-
 </head>
-<table align="center">
+<body>
+
+<table border="1" width="100%" cellpadding="0" cellspacing="0" bgcolor="#FFFAF0">
     <tr>
-        <th>
+        <div>
+            <td colspan="4" class="header" bgcolor="#f1dbb0" align="center"><font size="6pt" face="Times New Roman, Helvetica, serif"
+                                                                   color="#6a310a">Лабораторная
+                работа№1 по
+                Web-программированию</font></td>
+        </div>
+
+    </tr>
+
+    <tr>
+        <td colspan="4"><font color="#93673d" size="3pt" align="center">Выполнила: Шаповалова Дарья<br>Группа: P3130</font></td>
+    </tr>
+
+
+    <tr>
+        <td align="center">
             <form action="handler.php">
                 <p><b>Введите X:</b></p>
                 <p><input name="x1" type="radio" value="-2">-2</p>
@@ -92,39 +111,57 @@
                 <p><input name="x7" type="radio" value="1">1</p>
                 <p><input name="x8" type="radio" value="1,5">1,5</p>
                 <p>
-                    <button class="btn">Отправить</button>
+                    <button class="btn">Ввод</button>
                 </p>
             </form>
-        </th>
+        </td>
 
-        <th><p>
-            <form action="handler.php">
-            <p><b>Введите Y (от -5 до 3!):</b></p>
-                <p><input type="text" class="number" data-min="-5" data-max="3" data-separator=","></p>
+        <td align="center">
             <p>
-                <button class="btn">Отправить</button>
-            </p>
+            <form action="handler.php">
+                <p><b>Введите Y (от -5 до 3!):</b></p>
+                <p><input type="text" class="number" data-min="-5" data-max="3" data-separator=","></p>
+                <p>
+                    <button class="btn">Ввод</button>
+                </p>
             </form>
-            </p></th>
+            </p>
+        </td>
 
-        <th>
-        <form action="handler.php">
-            <p><b>Введите R:</b></p>
-            <p><select size="2" multiple name="R" >
-                <option value="1">1</option>
-                <option selected value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select></p>
-        </form>
-        </th>
+        <td align="center">
+            <form action="handler.php">
+                <p><b>Введите R:</b></p>
+                <p><select size="2" multiple name="R">
+                    <option value="1">1</option>
+                    <option selected value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select></p>
+                <p>
+                    <button class="btn">Ввод</button>
+                </p>
+            </form>
+        </td>
+
+        <td align="center">
+            <p><b>А теперь определим попадание точки, <br>заданной координатами ранее, в нашу область:</b></p>
+
+            <p><img src="img/grf.jpg" width="200" height="200"></p>
+        </td>
 
     </tr>
 
-</table>
-<body>
+    <tfoot>
+    <tr>
+        <td colspan="4" height="70px" align="center">
+            <a href="https://github.com/Dasxunya"><img src="img/round.jpg" title="github" alt="github" width="50"
+                                                       height="50"></a>
+        </td>
+    </tr>
+    </tfoot>
 
+</table>
 
 </body>
 </html>
