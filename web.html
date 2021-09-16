@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -10,6 +11,7 @@
             width: 100%;
             height: 100%;
             color: #FFFAF0;
+            background-size: 100%;
         }
 
         p {
@@ -71,92 +73,80 @@
         select {
             width: 150px;
         }
-
-
-
-        /*.header {*/
-        /*    display: flex;*/
-        /*    height: 250px;*/
-        /*}*/
     </style>
 </head>
 <body>
 
-<table border="1" width="100%" cellpadding="0" cellspacing="0" bgcolor="#FFFAF0">
+<table class="body-table" width="100%" cellpadding="0" cellspacing="0" bgcolor="#FFFAF0">
     <tr>
         <div>
-            <td colspan="4" class="header" bgcolor="#f1dbb0" align="center"><font size="6pt" face="Times New Roman, Helvetica, serif"
-                                                                   color="#6a310a">Лабораторная
-                работа№1 по
-                Web-программированию</font></td>
+            <td colspan="4" class="header" bgcolor="#f1dbb0" align="center"><font size="6pt"
+                                                                                  face="Times New Roman, Helvetica, serif"
+                                                                                  color="#6a310a">Лабораторная работа№1
+                по Web-программированию</font></td>
         </div>
 
     </tr>
 
     <tr>
-        <td colspan="4"><font color="#93673d" size="3pt" align="center">Выполнила: Шаповалова Дарья<br>Группа: P3130</font></td>
+        <td colspan="4" align="center" bgcolor="#faebd7"><font color="#93673d" size="3pt">Выполнила: Шаповалова Дарья;
+            Группа: P3230.</font></td>
     </tr>
 
-
-    <tr>
-        <td align="center">
-            <form action="handler.php">
+    <form id="form-coordinates" action="handler.php" method="get">
+        <tr>
+            <td align="center">
                 <p><b>Введите X:</b></p>
-                <p><input name="x1" type="radio" value="-2">-2</p>
-                <p><input name="x2" type="radio" value="-1,5">-1,5</p>
-                <p><input name="x3" type="radio" value="-1">-1</p>
-                <p><input name="x4" type="radio" value="-0,5">-0,5</p>
-                <p><input name="x5" type="radio" value="0">0</p>
-                <p><input name="x6" type="radio" value="0,5">0,5</p>
-                <p><input name="x7" type="radio" value="1">1</p>
-                <p><input name="x8" type="radio" value="1,5">1,5</p>
-                <p>
-                    <button class="btn">Ввод</button>
-                </p>
-            </form>
-        </td>
+                <p><input name="X" type="radio" value="-2">-2</p>
+                <p><input name="X" type="radio" value="-1,5">-1,5</p>
+                <p><input name="X" type="radio" value="-1">-1</p>
+                <p><input name="X" type="radio" value="-0,5">-0,5</p>
+                <p><input name="X" type="radio" value="0">0</p>
+                <p><input name="X" type="radio" value="0,5">0,5</p>
+                <p><input name="X" type="radio" value="1">1</p>
+                <p><input name="X" type="radio" value="1,5">1,5</p>
+                <p><input name="X" type="radio" value="2">2</p>
+            </td>
 
-        <td align="center">
-            <p>
-            <form action="handler.php">
-                <p><b>Введите Y (от -5 до 3!):</b></p>
-                <p><input type="text" class="number" data-min="-5" data-max="3" data-separator=","></p>
+            <td align="center">
                 <p>
-                    <button class="btn">Ввод</button>
+                    <p><b>Введите Y (от -5 до 3!):</b></p>
+                    <p><input type="text" class="number" data-min="-5" data-max="3" data-separator="," name="Y" placeholder="Y" autocomplete="off"></p>
                 </p>
-            </form>
-            </p>
-        </td>
+            </td>
 
-        <td align="center">
-            <form action="handler.php">
+            <td align="center">
                 <p><b>Введите R:</b></p>
-                <p><select size="2" multiple name="R">
-                    <option value="1">1</option>
-                    <option selected value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
+                <p><select size="2" name="R">
+                    <option value="1" name="r">1</option>
+                    <option value="2" name="r">2</option>
+                    <option value="3" name="r">3</option>
+                    <option value="4" name="r">4</option>
+                    <option value="5" name="r">5</option>
                 </select></p>
+            </td>
+
+            <td align="center" rowspan="2">
+                <p><b>А теперь определим попадание точки, <br>заданной координатами ранее, в нашу область:</b></p>
+
+                <p><img src="img/grf.jpg" width="200" height="200"></p>
+            </td>
+
+        </tr>
+        <tr>
+            <td colspan="3" align="center">
                 <p>
                     <button class="btn">Ввод</button>
                 </p>
-            </form>
-        </td>
-
-        <td align="center">
-            <p><b>А теперь определим попадание точки, <br>заданной координатами ранее, в нашу область:</b></p>
-
-            <p><img src="img/grf.jpg" width="200" height="200"></p>
-        </td>
-
-    </tr>
+            </td>
+        </tr>
+    </form>
 
     <tfoot>
     <tr>
-        <td colspan="4" height="70px" align="center">
-            <a href="https://github.com/Dasxunya"><img src="img/round.jpg" title="github" alt="github" width="50"
-                                                       height="50"></a>
+        <td colspan="4" height="70px" align="center" bgcolor="#faebd7">
+            <a href="https://github.com/Dasxunya"><img src="img/round.jpg" title="github" alt="github" width="30"
+                                                       height="30"></a>
         </td>
     </tr>
     </tfoot>
