@@ -1,6 +1,6 @@
 <?php session_start(); ?>
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Web_1</title>
@@ -73,19 +73,22 @@
         select {
             width: 150px;
         }
+
+        .math {
+            background-image: url("img/math.png");
+            background-size: 400px 400px;
+        }
     </style>
 </head>
 <body>
 
-<table class="body-table" width="100%" cellpadding="0" cellspacing="0" bgcolor="#FFFAF0">
-    <tr>
-        <div>
-            <td colspan="4" class="header" bgcolor="#f1dbb0" align="center"><font size="6pt"
-                                                                                  face="Times New Roman, Helvetica, serif"
-                                                                                  color="#6a310a">Лабораторная работа№1
-                по Web-программированию</font></td>
-        </div>
+<table border="1" width="100%" cellpadding="0" cellspacing="1" bgcolor="#FFFAF0">
 
+    <tr>
+        <td colspan="4" class="header" bgcolor="#f1dbb0" align="center"><font size="6pt"
+                                                                              face="Times New Roman, Helvetica, serif"
+                                                                              color="#6a310a">Лабораторная работа№1
+            по Web-программированию</font></td>
     </tr>
 
     <tr>
@@ -93,36 +96,38 @@
             Группа: P3230.</font></td>
     </tr>
 
-    <form id="form-coordinates" action="handler.php" method="get">
+    <form action="handler.php" method="get">
         <tr>
             <td align="center">
                 <p><b>Введите X:</b></p>
                 <p><input name="X" type="radio" value="-2">-2</p>
-                <p><input name="X" type="radio" value="-1,5">-1,5</p>
+                <p><input name="X" type="radio" value="-1.5">-1.5</p>
                 <p><input name="X" type="radio" value="-1">-1</p>
-                <p><input name="X" type="radio" value="-0,5">-0,5</p>
+                <p><input name="X" type="radio" value="-0.5">-0.5</p>
                 <p><input name="X" type="radio" value="0">0</p>
-                <p><input name="X" type="radio" value="0,5">0,5</p>
+                <p><input name="X" type="radio" value="0.5">0.5</p>
                 <p><input name="X" type="radio" value="1">1</p>
-                <p><input name="X" type="radio" value="1,5">1,5</p>
+                <p><input name="X" type="radio" value="1.5">1.5</p>
                 <p><input name="X" type="radio" value="2">2</p>
+
             </td>
 
             <td align="center">
                 <p>
-                    <p><b>Введите Y (от -5 до 3!):</b></p>
-                    <p><input type="text" class="number" data-min="-5" data-max="3" data-separator="," name="Y" placeholder="Y" autocomplete="off"></p>
+                <p><b>Введите Y (от -5 до 3!):</b></p>
+                <p><input type="text" class="number" data-min="-5" data-max="3" data-separator="." name="Y"
+                          placeholder="Y" autocomplete="off"></p>
                 </p>
             </td>
 
             <td align="center">
                 <p><b>Введите R:</b></p>
                 <p><select size="2" name="R">
-                    <option value="1" name="r">1</option>
-                    <option value="2" name="r">2</option>
-                    <option value="3" name="r">3</option>
-                    <option value="4" name="r">4</option>
-                    <option value="5" name="r">5</option>
+                    <option value="1" name="R">1</option>
+                    <option value="2" name="R">2</option>
+                    <option value="3" name="R">3</option>
+                    <option value="4" name="R">4</option>
+                    <option value="5" name="R">5</option>
                 </select></p>
             </td>
 
@@ -133,10 +138,12 @@
             </td>
 
         </tr>
+
+
         <tr>
-            <td colspan="3" align="center">
+            <td class="math" colspan="3" align="center">
                 <p>
-                    <button class="btn">Ввод</button>
+                    <button class="btn" type="click">Ввод</button>
                 </p>
             </td>
         </tr>
@@ -153,5 +160,29 @@
 
 </table>
 
+<!--<div>-->
+<!--    <table border="1">-->
+<!--        <caption>История выполнений</caption>-->
+<!--        <tr>-->
+<!--            <th class="res">X</th>-->
+<!--            <th class="res">Y</th>-->
+<!--            <th class="res">R</th>-->
+<!--            <th class="res">Текущее время</th>-->
+<!--            <th class="res">Время исполнения</th>-->
+<!--            <th class="res">Результат</th>-->
+<!--        </tr>-->
+<!--        <?php-->
+<!--                    if (isset($_SESSION['rows'])) {-->
+<!--                        echo "<tbody>";-->
+<!--        foreach ($_SESSION['rows'] as $row) {-->
+<!--        echo $row;-->
+<!--        }-->
+<!--        echo "</tbody>";-->
+<!--        }-->
+<!--        ?>-->
+<!--    </table>-->
+<!--</div>-->
+
+<!--<script src="validate.js"></script>-->
 </body>
 </html>

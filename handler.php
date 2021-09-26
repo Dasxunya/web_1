@@ -1,13 +1,12 @@
 <?php
 $startTime = microtime(true);
 session_start();
-
 if (isset($_GET['X']) && isset($_GET['Y']) && isset($_GET['R'])) {
     $X = $_GET['X'];
     $Y = $_GET['Y'];
     $R = $_GET['R'];
 
-    if (is_numeric($Y) && $Y <= 3 && $Y >= -5 && in_array($X, array(-2, -1.5, -1, -0.5, 0, 0.5, 1, 1.5, 2)) && in_array($R, array(1, 2, 3, 4, 5))) {
+    if (is_numeric($Y) && $Y < 3 && $Y > -5 && in_array($X, array(-2, -1.5, -1, -0.5, 0, 0.5, 1, 1.5, 2)) && in_array($R, array(1, 2, 3, 4, 5))) {
         if (isInCircle($X, $Y, $R) || isInRectangle($X, $Y, $R) || isInTriangle($X, $Y, $R)) {
             $message = "Входит в область";
         } else $message = "Вне области";
@@ -26,18 +25,15 @@ if (isset($_GET['X']) && isset($_GET['Y']) && isset($_GET['R'])) {
         {
             $_SESSION['rows'] = array($row);
         }
-        header("location: handler.php");
+        header("location: web.html");
 
-    }
-
-    else
+    } else
     {
-        echo "Ошибка в формате введённых данных! Используйте <a href='handler.php'>форму</a>.</br>";
+        echo "Ошибка в формате введённых данных! Используйте <a href='web.html'>форму</a>.</br>";
     }
-}
-else
+} else
 {
-    echo "Заполните <a href='handler.php'>форму</a>!";
+    echo "Заполните <a href='web.html'>форму</a>!";
 }
 
 function isInCircle($X, $Y, $R)
