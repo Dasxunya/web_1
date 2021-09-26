@@ -17,36 +17,31 @@ if (isset($_GET['X']) && isset($_GET['Y']) && isset($_GET['R'])) {
         $currentTime = date('d.m.y H:i:s');
 
         $row = "<tr><td>$X</td><td>$Y</td><td>$R</td><td>$message</td><td>$currentTime</td><td>$executionTime</td></tr>";
-        if (isset($_SESSION['rows']))
-        {
+        if (isset($_SESSION['rows'])) {
             $_SESSION['rows'][] = $row;
-        }
-        else
-        {
+        } else {
             $_SESSION['rows'] = array($row);
         }
-        header("location: web.html");
+        header("location: web.php");
 
-    } else
-    {
-        echo "Ошибка в формате введённых данных! Используйте <a href='web.html'>форму</a>.</br>";
+    } else {
+        echo "Ошибка в формате введённых данных! Используйте <a href='web.php'>форму</a>.</br>";
     }
-} else
-{
-    echo "Заполните <a href='web.html'>форму</a>!";
+} else {
+    echo "Заполните <a href='web.php'>форму</a>!";
 }
 
 function isInCircle($X, $Y, $R)
-        {
+{
     return (pow($X, 2) + pow($Y, 2) <= pow($R, 2) && ($Y >= 0) && ($X <= 0));
-        }
+}
 
 function isInRectangle($X, $Y, $R)
-        {
+{
     return (($X >= 0) && ($Y >= 0) && ($X <= $R) && ($Y <= $R / 2));
-        }
+}
 
 function isInTriangle($X, $Y, $R)
-        {
+{
     return (($X <= 0) && ($Y <= 0) && ($Y >= $X - $R / 2));
-        }
+}

@@ -78,6 +78,10 @@
             background-image: url("img/math.png");
             background-size: 400px 400px;
         }
+        .finish_table{
+            color: #3f1f0b;
+            background-color: antiquewhite;
+        }
     </style>
 </head>
 <body>
@@ -160,29 +164,28 @@
 
 </table>
 
-<!--<div>-->
-<!--    <table border="1">-->
-<!--        <caption>История выполнений</caption>-->
-<!--        <tr>-->
-<!--            <th class="res">X</th>-->
-<!--            <th class="res">Y</th>-->
-<!--            <th class="res">R</th>-->
-<!--            <th class="res">Текущее время</th>-->
-<!--            <th class="res">Время исполнения</th>-->
-<!--            <th class="res">Результат</th>-->
-<!--        </tr>-->
-<!--        <?php-->
-<!--                    if (isset($_SESSION['rows'])) {-->
-<!--                        echo "<tbody>";-->
-<!--        foreach ($_SESSION['rows'] as $row) {-->
-<!--        echo $row;-->
-<!--        }-->
-<!--        echo "</tbody>";-->
-<!--        }-->
-<!--        ?>-->
-<!--    </table>-->
-<!--</div>-->
-
-<!--<script src="validate.js"></script>-->
+<div>
+    <table border="1" class="finish_table">
+        <caption>История выполнений</caption>
+        <tr>
+            <th class="res">X</th>
+            <th class="res">Y</th>
+            <th class="res">R</th>
+            <th class="res">Текущее время</th>
+            <th class="res">Время исполнения</th>
+            <th class="res">Результат</th>
+        </tr>
+        <?php
+                    if (isset($_SESSION['rows'])) {
+                        echo "<tbody>";
+        foreach ($_SESSION['rows'] as $row) {
+        echo $row;
+        }
+        echo "</tbody>";
+        }
+        ?>
+    </table>
+</div>
 </body>
 </html>
+<script src="validate.js"></script>
