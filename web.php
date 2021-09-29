@@ -1,4 +1,4 @@
-<?php session_start();?>
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="ru" xmlns="http://www.w3.org/1999/html">
 <head>
@@ -78,26 +78,41 @@
             background-image: url("img/math.png");
             background-size: 400px 400px;
         }
-        .finish_table{
+
+        dev > table#finish_table {
             color: #3f1f0b;
-            background-color: antiquewhite;
+            background-color: #e3d8c5;
+            border: 2px outset #c76d30;
+            width: 80%;
+            margin: auto;
+        }
+
+        dev table#finish_table td, th {
+            text-align: center;
+            border: black;
+            border-bottom: #3f1f0b;
+        }
+
+        .header {
+            text-align: center;
+            background-color: #faebd7;
+            color: #93673d;
+            size: 3pt;
         }
     </style>
 </head>
 <body>
-
 <table border="1" width="100%" cellpadding="0" cellspacing="1" bgcolor="#FFFAF0">
 
     <tr>
-        <td colspan="4" class="header" bgcolor="#f1dbb0" align="center"><font size="6pt"
-                                                                              face="Times New Roman, Helvetica, serif"
-                                                                              color="#6a310a">Лабораторная работа№1
-            по Web-программированию</font></td>
+        <td colspan="4" bgcolor="#f1dbb0" align="center"><font size="6pt"
+                                                               face="Times New Roman, Helvetica, serif"
+                                                               color="#6a310a">Лабораторная работа№1
+                по Web-программированию</font></td>
     </tr>
 
     <tr>
-        <td colspan="4" align="center" bgcolor="#faebd7"><font color="#93673d" size="3pt">Выполнила: Шаповалова Дарья;
-            Группа: P3230.</font></td>
+        <td colspan="4" class="header">Выполнила: Шаповалова Дарья, Группа: P3230, Вариант 30017.</td>
     </tr>
 
     <form action="handler.php" method="get">
@@ -118,7 +133,7 @@
 
             <td align="center">
                 <p>
-                <p><b>Введите Y из диапазона (-5 ; 3):</b></p>
+                <p><b>Введите Y из диапазона (-5; 3):</b></p>
                 <p><input type="text" class="number" data-min="-5" data-max="3" data-separator="." name="Y"
                           placeholder="Y" autocomplete="off"></p>
                 </p>
@@ -127,12 +142,12 @@
             <td align="center">
                 <p><b>Введите R:</b></p>
                 <p><select size="2" name="R">
-                    <option value="1" name="R">1</option>
-                    <option value="2" name="R">2</option>
-                    <option value="3" name="R">3</option>
-                    <option value="4" name="R">4</option>
-                    <option value="5" name="R">5</option>
-                </select></p>
+                        <option value="1" name="R">1</option>
+                        <option value="2" name="R">2</option>
+                        <option value="3" name="R">3</option>
+                        <option value="4" name="R">4</option>
+                        <option value="5" name="R">5</option>
+                    </select></p>
             </td>
 
             <td align="center" rowspan="2">
@@ -147,7 +162,7 @@
         <tr>
             <td class="math" colspan="3" align="center">
                 <p>
-                    <button class="btn" type="click">Ввод</button>
+                    <button class="btn" type="click" name="send">Ввод</button>
                 </p>
             </td>
         </tr>
@@ -161,31 +176,46 @@
         </td>
     </tr>
     </tfoot>
-
 </table>
 
-<div>
-    <table border="1" class="finish_table">
-        <caption>История выполнений</caption>
+<dev>
+    <table id="finish_table">
         <tr>
+            <td>
+                <caption><h1>История выполнений</h1></caption>
             <th class="res">X</th>
             <th class="res">Y</th>
             <th class="res">R</th>
+            <th class="res">Попадание</th>
             <th class="res">Текущее время</th>
             <th class="res">Время исполнения</th>
-            <th class="res">Результат</th>
+            </td>
         </tr>
-        <?php
-                    if (isset($_SESSION['rows'])) {
-                        echo "<tbody>";
-        foreach ($_SESSION['rows'] as $row) {
-        echo $row;
-        }
-        echo "</tbody>";
-        }
-        ?>
+
+        <tr>
+            <?php
+            if (isset($_SESSION['rows'])) {
+                echo "<tbody>";
+                foreach ($_SESSION['rows'] as $row) {
+                    echo $row;
+                }
+                echo "</tbody>";
+            }
+            ?>
+        </tr>
+
+        <form method="get" action="handler.php">
+            <tr>
+                <td colspan="6" bgcolor="#cec3b1"><br>
+                    <button class="btn" type="click" name="clear-table">Очистить</button>
+                </td>
+            </tr>
+        </form>
+
     </table>
-</div>
+</dev>
+
+
 </body>
 </html>
 <script src="validate.js"></script>

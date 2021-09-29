@@ -1,7 +1,13 @@
 <?php
 $startTime = microtime(true);
 session_start();
-if (isset($_GET['X']) && isset($_GET['Y']) && isset($_GET['R'])) {
+if(isset($_GET['clear-table'])){
+    if (isset($_SESSION['rows'])) {
+        $_SESSION['rows'] = array();
+        header("location: web.php");
+        exit();
+    }
+} elseif (isset($_GET['send']) && isset($_GET['X']) && isset($_GET['Y']) && isset($_GET['R'])) {
     $X = $_GET['X'];
     $Y = $_GET['Y'];
     $R = $_GET['R'];
@@ -24,9 +30,8 @@ if (isset($_GET['X']) && isset($_GET['Y']) && isset($_GET['R'])) {
         }
         header("location: web.php");
         exit();
-
     } else {
-        echo "Ошибка в формате введённых данных! Используйте <a href='web.php'>форму</a>.</br>";
+        echo "Неверно ввведены данные, попробуйте еще раз! Используйте <a href='web.php'>форму</a>.</br>";
     }
 } else {
     echo "Заполните <a href='web.php'>форму</a>!";
