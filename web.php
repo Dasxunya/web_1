@@ -98,11 +98,12 @@
             background-color: #faebd7;
             color: #93673d;
             size: 3pt;
+            font-family: sans-serif;
         }
     </style>
 </head>
 <body>
-<table border="1" width="100%" cellpadding="0" cellspacing="1" bgcolor="#FFFAF0">
+<table border="1" width="100%" cellpadding="1" cellspacing="1" bgcolor="#FFFAF0">
 
     <tr>
         <td colspan="4" bgcolor="#f1dbb0" align="center"><font size="6pt"
