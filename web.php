@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="ru" xmlns="http://www.w3.org/1999/html">
 <head>
@@ -118,7 +118,7 @@
 
             <td align="center">
                 <p>
-                <p><b>Введите Y (от -5 до 3!):</b></p>
+                <p><b>Введите Y из диапазона (-5 ; 3):</b></p>
                 <p><input type="text" class="number" data-min="-5" data-max="3" data-separator="." name="Y"
                           placeholder="Y" autocomplete="off"></p>
                 </p>

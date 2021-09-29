@@ -23,6 +23,7 @@ if (isset($_GET['X']) && isset($_GET['Y']) && isset($_GET['R'])) {
             $_SESSION['rows'] = array($row);
         }
         header("location: web.php");
+        exit();
 
     } else {
         echo "Ошибка в формате введённых данных! Используйте <a href='web.php'>форму</a>.</br>";
